@@ -1,16 +1,36 @@
 <!doctype html>
 <html>
     <head>
-        <title>Build-A-Blog</title>
+        <title>Blogz</title>
         <style>
             .error {
                 color: red;
             }
+            .topnav-right{
+                float:right;
+                display:block;
+                text-align:center;
+                width:50%;
+                font-size: 25px;
+            }
+            .topnav-left{
+                display: block;
+                font-size: 25px;
+            }
+
         </style>
          <nav>
+             <div class='topnav-left'>
+                 <a href='/'> Home</a>
+                 <a href='/blog'>All Posts</a>
+                 <a href='login'>New Posts</a>
+             </div>
+            
+             <div class ='topnav-right'>
+                 <a href='/login'>Login</a>
+                 <a href='/logout'>Logout</a>
+             </div>
              
-            <a href='/blog'>Main Blog Page</a> 
-            <a href='/newpost'>Add a Blog Entry</a>
         </nav>
     </head>
 <body>

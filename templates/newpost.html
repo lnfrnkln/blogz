@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<h1>New post</h1>
 <form action="/newpost" method="post">
-    <label>Title for your new blog:<br>
+    <label>Title for your new blog post:<br>
         <input name="title" type="text" value="{{ title }}"/>
     </label>
 

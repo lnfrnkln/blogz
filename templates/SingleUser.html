@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Blog Posts!</h1>
+<h1>Blogs by {{user.username}}({{blogs.total}})</h1>
     <ul>
-        {% for blog in blogs.items %}
+        {% for blog in blogs.items  %}
             <li>
                 <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
-                <hr>
+                
                 <p>{{blog.body}}</p>
-                <p><i>Written By:<a href='/blog?user={{blog.owner.username}}'>{{blog.owner.username}}</a></i></p>
+                
+                <p><i>Written by: <a href='/blog?user={{blog.owner.username}}'>{{blog.owner.username}}</a></i></p> 
             </li>
         {% endfor %}
     </ul>
         {% for page in blogs.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)  %} 
             {% if page %}
                 {% if blogs.page == page %}
-                    <a class="btn btn-info mb-4" href='/blog?page={{page}}'>{{page}}</a>
+                    <a class="btn btn-info mb-4" href='/blog?user={{user.username}}&page={{page}}'>{{page}}</a>
                 {% else %}
-                     <a class="btn btn-outline-info mb-4" href='/blog?page={{page}}'>{{page}}</a>
+                    <a class="btn btn-outline-info mb-4" href='/blog?user={{user.username}}&page={{page}}'>{{page}}</a>
                 {% endif %}
-
+        
             {% else %}
                 ...
             {% endif %}
